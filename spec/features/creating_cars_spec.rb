@@ -15,4 +15,19 @@ feature "Creating Cars" do
 
     expect(page).to have_content('1967 Ford Mustang created')
   end
+
+  scenario "can create another car" do
+    visit '/'
+
+    click_link 'New Car'
+
+    fill_in 'Make', with: 'Chevy'
+    fill_in 'Model', with: 'Equinox'
+    fill_in 'Year', with: '2008'
+    fill_in 'Price', with: '9800'
+
+    click_button 'Create Car'
+
+    expect(page).to have_content('2008 Chevy Equinox created')
+  end
 end
