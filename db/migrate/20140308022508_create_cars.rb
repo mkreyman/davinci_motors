@@ -4,7 +4,7 @@ class CreateCars < ActiveRecord::Migration
       t.string :make
       t.string :model
       t.integer :year
-      t.decimal :price, :precision => 8, :scope => 2
+      t.decimal :price, :precision => 8, :scale => 2
 
       t.timestamps
     end
