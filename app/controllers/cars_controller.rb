@@ -1,6 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: [:show, :edit, :update, :destroy
-  ]
+  before_action :set_car, only: [:show, :edit, :update, :destroy]
   def index
     @cars = Car.all
   end
@@ -32,7 +31,7 @@ class CarsController < ApplicationController
 
   def destroy
     @car.destroy
-    redirect_to cars_url
+    redirect_to cars_url, notice: "Car was removed."
   end
 
   private
