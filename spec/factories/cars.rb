@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :car do
-    make "MyString"
-    model "MyString"
-    year 1
-    price "9.99"
+    make "Ford"
+    model "Mustang"
+    year "1967"
+    price "9999.99"
   end
 end
