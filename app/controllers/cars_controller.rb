@@ -1,5 +1,8 @@
 class CarsController < ApplicationController
+  before_action :set_car, only: [:show, :edit, :update, :destroy
+  ]
   def index
+    @cars = Car.all
   end
 
   def new
@@ -8,11 +11,38 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-    redirect_to cars_path, notice: "#{@car.year} #{@car.make} #{@car.model} created"
+
+    if @car.save
+      redirect_to @car, notice: "#{@car.year} #{@car.make} #{@car.model} created."
+    else
+      render action: 'new'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @car.update(car_params)
+      redirect_to @car, notice: "Car was successfully updated."
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @car.destroy
+    redirect_to cars_url
   end
 
   private
+
+  def set_car
+    @car = Car.find(params[:id])
+  end
+
   def car_params
     params.require(:car).permit(:make, :model, :year, :price)
   end
+
 end
