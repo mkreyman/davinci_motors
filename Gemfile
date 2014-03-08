@@ -10,8 +10,9 @@ gem 'factory_girl_rails'
 group :test do
   gem 'capybara'
 end
-
-gem 'ruby_gntp'
+group :development do
+  gem 'ruby_gntp'
+end
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
