@@ -5,7 +5,10 @@ feature "Displaying Cars" do
     car = FactoryGirl.create(:car)
     visit '/'
 
-    expect(page).to have_content('Ford Mustang 1967 9999')
+    expect(page).to have_content('Ford')
+    expect(page).to have_content('Mustang')
+    expect(page).to have_content('1967')
+    expect(page).to have_content('$9,999.99')
   end
 
 end

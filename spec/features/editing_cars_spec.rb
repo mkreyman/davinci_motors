@@ -3,7 +3,13 @@ require 'spec_helper'
 feature "Editing Cars" do
   scenario "can edit a car" do
     car = FactoryGirl.create(:car)
-    visit '/cars/1/edit'
+    visit '/'
+
+    #within("#car_#{car.id}") do
+    #  click_link 'Edit'
+    #end
+
+    click_link "edit_car_#{car.id}"
 
     fill_in 'Model', with: 'Focus'
     fill_in 'Year', with: '2010'

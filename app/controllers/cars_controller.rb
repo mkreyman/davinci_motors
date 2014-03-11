@@ -25,13 +25,13 @@ class CarsController < ApplicationController
     if @car.update(car_params)
       redirect_to @car, notice: "Car was successfully updated."
     else
-      render action: 'edit'
+      render :edit
     end
   end
 
   def destroy
     @car.destroy
-    redirect_to cars_url, notice: "Car was removed."
+    redirect_to cars_url, notice: "#{@car.year} #{@car.make} #{@car.model} was removed."
   end
 
   private
