@@ -13,8 +13,11 @@
        <%= message %>
   </div>
 <% end %>
+<div class="container">
+  <%= render 'layouts/authentication' %>
+  <%= yield %>
+</div>
 
-<%= yield %>
 
 </body>
 </html>
