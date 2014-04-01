@@ -34,6 +34,10 @@ class CarsController < ApplicationController
     redirect_to cars_url, notice: "#{@car.year} #{@car.make} #{@car.model} was removed."
   end
 
+  def show
+
+  end
+
   private
 
   def set_car
