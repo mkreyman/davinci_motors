@@ -3,7 +3,14 @@ DavinciMotors::Application.routes.draw do
   get "users/create"
   root :to => "cars#index"
 
-  resources :cars
+  resources :cars do
+    member do
+      get 'claim', as: 'claim'
+    end
+  end
+
+  get 'my_cars', to: 'cars#my_cars'
+
   resources :users, only: [:new, :create]
 
   get 'login',
