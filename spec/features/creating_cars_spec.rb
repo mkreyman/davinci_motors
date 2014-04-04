@@ -19,7 +19,7 @@ feature "Creating Cars" do
 
     car = Car.first
 
-    within("tr#car_#{car1.id}") do
+    within("tr#car_#{car.id}") do
       expect(page).to have_content('1967')
       expect(page).to have_content('Ford')
       expect(page).to have_content('Mustang')
