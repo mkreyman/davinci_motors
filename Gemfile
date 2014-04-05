@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.3'
 gem 'bcrypt-ruby'
 gem 'faker'
-#gem 'byebug'
+gem 'byebug'
+gem 'twitter-bootstrap-rails'
 
 gem 'omniauth-github'
 

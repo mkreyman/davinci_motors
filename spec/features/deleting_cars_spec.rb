@@ -6,7 +6,7 @@ feature "Deleting Cars" do
     visit '/'
 
     within("#car_#{car.id}") do
-      click_link 'Destroy'
+      click_link 'Delete'
     end
 
     # click_link "edit_car_#{car.id}"
